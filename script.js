@@ -1,4 +1,4 @@
-var apiBaseUrl = "http://51.81.172.193:3000/";
+var apiBaseUrl = "http://localhost:3000/";
 window.onload = function () {
   bootlint.showLintReportForCurrentDocument([], {
     hasProblems: false,
@@ -397,6 +397,7 @@ function  archiveTodo(id){
 function  unarchiveTodo(id){
   $.ajax({
     type: 'PUT',
+    async: false,
     url: apiBaseUrl + "tasks/"+id,
     data:{ status: 'completed' },
     success: function (data) {
